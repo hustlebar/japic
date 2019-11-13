@@ -18,6 +18,22 @@
   </properties>
 
   <dependencies>
+    <!-- JSON-B dependency -->
+    <dependency>
+      <groupId>jakarta.json.bind</groupId>
+      <artifactId>jakarta.json.bind-api</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+
+    <!-- JSON-B implementation dependency -->
+    <dependency>
+      <groupId>org.eclipse</groupId>
+      <artifactId>yasson</artifactId>
+      <version>1.0.5</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- JUnit5 dependency -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
