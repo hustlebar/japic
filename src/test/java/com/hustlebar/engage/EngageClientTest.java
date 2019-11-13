@@ -10,4 +10,9 @@ public class EngageClientTest {
     public void testAuthentication() {
         new EngageClient().authenticate("tham@softwareag.com", "Tham#123");
     }
+
+    @Test
+    public void testGetOrganizations() {
+        new EngageClient().getOrganizations();
+    }
 }
