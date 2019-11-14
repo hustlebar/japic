@@ -81,4 +81,8 @@ public class EngageClient {
             e.printStackTrace();
         }
     }
+
+    public void concurrentLogin(int count) {
+        
+    }
 }
