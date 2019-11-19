@@ -10,6 +10,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 
+/**
+ * @author tham 
+ */
 public class EngageClient {
     public static final String HOST = "https://engage.softwareagdev.cloud";
 
