@@ -15,4 +15,9 @@ public class EngageClientTest {
     public void testGetOrganizations() {
         new EngageClient().getOrganizations();
     }
+
+    @Test
+    public void testConcurrentLogin() {
+        new EngageClient().concurrentLogin(10);
+    }
 }

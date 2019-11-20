@@ -11,10 +11,11 @@ import java.net.http.HttpResponse;
 import java.util.List;
 
 /**
- * @author tham 
+ * @author tham
  */
 public class EngageClient {
     public static final String HOST = "https://engage.softwareagdev.cloud";
+    HttpClient client = null;
 
     public void authenticate(String email, String password) {
         User user = new User(email, password);
@@ -25,9 +26,11 @@ public class EngageClient {
 
         CookieHandler.setDefault(new CookieManager());
 
-        final HttpClient client = HttpClient.newBuilder()
-                .cookieHandler(CookieHandler.getDefault())
-                .build();
+        if (client == null) {
+            client = HttpClient.newBuilder()
+                    .cookieHandler(CookieHandler.getDefault())
+                    .build();
+        }
 
         try {
             final HttpRequest request = HttpRequest.newBuilder()
@@ -87,5 +90,17 @@ public class EngageClient {
 
     public void concurrentLogin(int count) {
         System.out.println("Number of threads are: " + count);
+        for (int i = 0; i < count; i++) {
+            
+        }
+        final Runnable runnable = new Runnable() {
+
+            @Override
+            public void run() {
+                authenticate("tham@softwareag.com", "Tham#123");
+            }
+        };
+
+        new Thread(runnable).start();
     }
 }
