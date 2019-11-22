@@ -91,12 +91,16 @@ public class EngageClient {
     public void concurrentLogin(int count) {
         System.out.println("Number of threads are: " + count);
         for (int i = 0; i < count; i++) {
-            
+            startThread();
         }
+    }
+
+    private void startThread() {
         final Runnable runnable = new Runnable() {
 
             @Override
             public void run() {
+                System.out.println("Login initiated");
                 authenticate("tham@softwareag.com", "Tham#123");
             }
         };
