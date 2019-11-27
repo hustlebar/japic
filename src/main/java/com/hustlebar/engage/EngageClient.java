@@ -18,6 +18,7 @@ public class EngageClient {
     HttpClient client = null;
 
     public void authenticate(String email, String password) {
+        System.out.println("Enters authenticate()");
         User user = new User(email, password);
         String userJson = JsonbBuilder.create()
                 .toJson(user);
@@ -92,7 +93,7 @@ public class EngageClient {
     public void concurrentLogin(int count) {
         System.out.println("Number of threads are: " + count);
         for (int i = 0; i < count; i++) {
-            startThread();
+            new Thread(new AsyncLogin(this)).start();
         }
     }
 

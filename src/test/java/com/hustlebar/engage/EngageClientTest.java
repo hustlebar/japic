@@ -18,6 +18,6 @@ public class EngageClientTest {
 
     @Test
     public void testConcurrentLogin() {
-        new EngageClient().concurrentLogin(10);
+        new EngageClient().concurrentLogin(1);
     }
 }
